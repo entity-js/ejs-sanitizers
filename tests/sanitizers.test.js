@@ -11,15 +11,14 @@
  *                                      \/_____/ \/_____/
  */
 
-var test = require('unit.js');
+var test = require('unit.js'),
+    EUnknownSanitizer = require('../lib/errors/EUnknownSanitizer');
+
+var Sanitizers;
 
 describe('ejs/sanitizers', function () {
 
   'use strict';
-
-  var EUnknownSanitizer = require('../lib/errors/EUnknownSanitizer');
-
-  var Sanitizers;
 
   beforeEach(function () {
 
@@ -29,8 +28,8 @@ describe('ejs/sanitizers', function () {
 
   afterEach(function () {
 
-    var name = require.resolve('../lib');
-    delete require.cache[name];
+    global._ejsStatic['ejs-sanitizers'] = {_sanitizers: {}};
+    delete require.cache[require.resolve('../lib')];
 
   });
 
