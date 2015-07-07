@@ -6,17 +6,19 @@
     "Sanitizers"
   ],
   "author": "Orgun109uk <orgun109uk@gmail.com> (http://my-site.com/)",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/entity-js/ejs-sanitizers.git"
   },
   "scripts": {
-    "test": "mocha ./tests/"
+    "test": "mocha ./tests/",
+    "eslint": "eslint index.js ./lib ./tests",
+    "jshint": "jshint index.js ./lib ./tests"
   },
   "dependencies": {
     "async": "^1.3.0",
-    "ejs-sortby": "git://github.com/entity-js/ejs-sortby.git#0.0.1",
-    "ejs-t": "git://github.com/entity-js/ejs-t.git#0.0.1"
+    "ejs-sortby": "git://github.com/entity-js/ejs-sortby.git#0.0.2",
+    "ejs-t": "git://github.com/entity-js/ejs-t.git#0.0.2"
   }
 }
